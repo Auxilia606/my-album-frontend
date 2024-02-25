@@ -1,11 +1,7 @@
-import { Button } from "@components";
+import { Router } from "@components";
 
 const App = () => {
-  return (
-    <div>
-      react<Button></Button>
-    </div>
-  );
+  return <Router />;
 };
 
 export default App;
