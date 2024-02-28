@@ -1,4 +1,4 @@
-import { Divider, Image, Title } from "@components";
+import { Container, Divider, Image, Title } from "@components";
 import Logo from "@resources/images/logo200.png";
 import { UserStore } from "@store";
 import { useCallback } from "react";
@@ -16,8 +16,12 @@ export const Login = () => {
     navigate("/");
   }, [navigate]);
 
+  const onJoin = useCallback(() => {
+    navigate("/join");
+  }, [navigate]);
+
   return (
-    <div className="flex flex-col flex-1 bg-purple-100 h-full items-center justify-center gap-4">
+    <Container className="bg-purple-100 h-full items-center justify-center gap-4">
       <Image src={Logo} className="w-20 h-20" />
       <Title className="text-purple-900">앨범 공유하기</Title>
       <input
@@ -37,6 +41,9 @@ export const Login = () => {
       >
         로그인
       </button>
+      <div>
+        <button onClick={onJoin}>회원가입</button>
+      </div>
       <Divider className="self-stretch mx-2" text="또는" />
       <button
         className="bg-cyan-400 rounded-md w-60 p-2 text-center font-bold text-cyan-900"
@@ -44,6 +51,6 @@ export const Login = () => {
       >
         카카오톡 로그인
       </button>
-    </div>
+    </Container>
   );
 };
