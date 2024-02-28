@@ -6,7 +6,8 @@
       "@components": ["./src/components"],
       "@resources": ["./src/resources"],
       "@store": ["./src/store"],
-      "@pages": ["./src/pages"]
+      "@pages": ["./src/pages"],
+      "@types": ["./my-album-types"]
     }
   }
 }
