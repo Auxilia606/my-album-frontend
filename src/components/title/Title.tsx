@@ -5,7 +5,7 @@ export const Title: React.FC<TitleProps> = (props) => {
   return (
     <label
       {...props}
-      className={classNames("font-bold text-xl", props.className)}
+      className={classNames("font-bold", props.className)}
     ></label>
   );
 };

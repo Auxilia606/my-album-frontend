@@ -1,30 +1,22 @@
-# Getting Started with Create React App
+# My-Album-Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+앨범 저장 및 공유 서비스 프론트엔드
 
-## Available Scripts
+## dependency 설명
 
-In the project directory, you can run:
+react-router-dom: 기본적인 react routing 기능을 위해 추가
+@tanstack/react-query: API cache 기능을 위해 추가
+@craco/craco: CRA로 생성한 React 프로젝트의 설정을 eject 없이 변경하기 위해 추가
+tailwindcss: css-in-js 기법이 아닌 className 기반 스타일링을 위해 추가
 
-### `yarn start`
+## VS code 설정 관련 기록
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+라이브러리의 method, type 불러올 때 dist 폴더의 export 값을 불러오는 현상 발생
+vscode settings.json 추가
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```JSON
+// settings.json - VSCode
+"javascript.preferences.autoImportFileExcludePatterns": ["dist", "build"],
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+"javascript.preferences.importModuleSpecifier": "relative"
+```

@@ -3,7 +3,6 @@ import { makeAutoObservable } from "mobx";
 type UserInfo = {
   nickname: string;
   email: string;
-  token: string;
 };
 
 export class UserStore {

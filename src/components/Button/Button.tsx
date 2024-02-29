@@ -6,7 +6,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     <button
       {...{
         ...props,
-        className: classNames("rounded-md font-bold", props.className),
+        className: classNames("rounded-md", props.className),
       }}
     ></button>
   );

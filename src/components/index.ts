@@ -5,3 +5,4 @@ export * from "./image";
 export * from "./input";
 export * from "./router";
 export * from "./title";
+export * from "./warning";
