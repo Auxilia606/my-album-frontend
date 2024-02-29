@@ -1,4 +1,4 @@
-import { Container, Divider, Image, Title } from "@components";
+import { Button, Container, Image, Title, VerticalDivider } from "@components";
 import Logo from "@resources/images/logo200.png";
 import { UserStore } from "@store";
 import { useCallback } from "react";
@@ -20,37 +20,46 @@ export const Login = () => {
     navigate("/join");
   }, [navigate]);
 
+  const onAbout = useCallback(() => {
+    navigate("/about");
+  }, [navigate]);
+
   return (
-    <Container className="bg-purple-100 h-full items-center justify-center gap-4">
+    <Container className="items-center justify-center gap-4">
       <Image src={Logo} className="w-20 h-20" />
-      <Title className="text-purple-900">앨범 공유하기</Title>
+      <Title className="text-black text-2xl">앨범 공유하기</Title>
       <input
-        className="bg-cyan-50 rounded-md w-60 p-2"
+        className="bg-cyan-50 rounded-md w-60 p-2 text-sm"
         type="email"
         placeholder="이메일 주소를 입력해주세요"
       />
       <input
-        className="bg-cyan-50 rounded-md w-60 p-2"
+        className="bg-cyan-50 rounded-md w-60 p-2 text-sm"
         type="password"
         placeholder="비밀번호를 입력해주세요"
       />
-      <button
-        className="bg-cyan-400 rounded-md w-60 p-2 text-center font-bold text-cyan-900"
-        type="submit"
+      <Button
+        className="bg-cyan-400 w-60 p-2 font-bold text-cyan-900"
         onClick={onLogin}
       >
         로그인
-      </button>
-      <div>
-        <button onClick={onJoin}>회원가입</button>
+      </Button>
+      <div className="flex flex-row gap-3">
+        <Button className="font-normal text-sm" onClick={onJoin}>
+          회원가입
+        </Button>
+        <VerticalDivider />
+        <Button className="font-normal text-sm" onClick={onAbout}>
+          About
+        </Button>
       </div>
-      <Divider className="self-stretch mx-2" text="또는" />
+      {/* <Divider className="self-stretch mx-2" text="또는" />
       <button
         className="bg-cyan-400 rounded-md w-60 p-2 text-center font-bold text-cyan-900"
         type="submit"
       >
         카카오톡 로그인
-      </button>
+      </button> */}
     </Container>
   );
 };
