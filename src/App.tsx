@@ -14,7 +14,7 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Container className="bg-amber-100 h-full items-center justify-center">
+      <Container className="bg-gray-50 h-full items-center justify-center">
         <Router />
       </Container>
     </QueryClientProvider>

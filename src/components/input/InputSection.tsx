@@ -17,7 +17,7 @@ export const InputSection: React.FC<InputSectionProps> = React.forwardRef<
       </div>
       <div className="flex gap-2">
         <input
-          className="bg-white rounded-md w-80 px-2 py-1 text-sm"
+          className="bg-white rounded-md w-60 px-2 py-1 text-sm"
           {...inputProps}
           ref={ref}
         />

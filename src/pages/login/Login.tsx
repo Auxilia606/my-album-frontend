@@ -35,7 +35,7 @@ export const Login = () => {
 
   return (
     <form onSubmit={handleSubmit(onLogin)}>
-      <Container className="items-center justify-center gap-4">
+      <Container className="items-center justify-center gap-4 p-8 rounded-2xl bg-green-200">
         <Image src={Logo} className="w-20 h-20" />
         <Title className="text-black text-2xl">앨범 공유하기</Title>
         <input
@@ -51,7 +51,7 @@ export const Login = () => {
           {...register("password")}
         />
         <Button
-          className="bg-lime-500 w-60 p-2 font-bold text-gray-100"
+          className="bg-teal-600 w-60 p-2 font-bold text-gray-100"
           type="submit"
         >
           로그인

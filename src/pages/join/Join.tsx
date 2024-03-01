@@ -33,7 +33,7 @@ export const Join = () => {
 
   return (
     <form onSubmit={handleSubmit(onValid, onInvalid)}>
-      <Container className="items-center justify-center gap-6">
+      <Container className="items-center justify-center gap-6 p-8 rounded-2xl bg-green-200">
         <Title className="text-2xl">회원가입</Title>
         <div className="flex flex-col gap-2">
           <InputSection
@@ -79,7 +79,10 @@ export const Join = () => {
             })}
           />
         </div>
-        <Button type="submit" className="bg-orange-300 w-60 p-2 font-bold">
+        <Button
+          type="submit"
+          className="bg-teal-600 text-white w-60 p-2 font-bold"
+        >
           회원가입
         </Button>
       </Container>
