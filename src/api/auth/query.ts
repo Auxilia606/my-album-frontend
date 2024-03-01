@@ -1,24 +1,26 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { UserDTO, UserEmailDTO, UserNicknameDTO } from "@types";
 import {
-  getLogout,
   postCheckEmail,
   postCheckNickname,
   postLogin,
+  postLogout,
   postUser,
 } from "./request";
 
 export const usePostUserLogin = () => {
   return useMutation({
-    mutationFn: (dto: Pick<UserDTO, "email" | "password">) => postLogin(dto),
+    mutationFn: async (dto: Pick<UserDTO, "email" | "password">) => {
+      const data = await postLogin(dto);
+
+      return data;
+    },
   });
 };
 
 export const useGetUserLogout = () => {
-  return useQuery({
-    queryKey: ["auth"],
-    queryFn: () => getLogout(),
-    enabled: false,
+  return useMutation({
+    mutationFn: () => postLogout(),
   });
 };
 

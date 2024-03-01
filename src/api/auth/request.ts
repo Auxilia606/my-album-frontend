@@ -10,12 +10,12 @@ export const postLogin = async (dto: Pick<UserDTO, "email" | "password">) => {
   return data;
 };
 
-export const getLogout = async () => {
-  await defaultApi.get("/auth/logout");
+export const postLogout = async () => {
+  await defaultApi.post("/auth/logout", { withCredentials: true });
 };
 
 export const postUser = async (dto: UserDTO) => {
-  const { data } = await defaultApi.post<UserResDTO>("/auth/join", dto);
+  const { data } = await defaultApi.post<UserResDTO>("/auth/register", dto);
 
   return data;
 };

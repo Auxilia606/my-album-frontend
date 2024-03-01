@@ -39,19 +39,19 @@ export const Login = () => {
         <Image src={Logo} className="w-20 h-20" />
         <Title className="text-black text-2xl">앨범 공유하기</Title>
         <input
-          className="bg-cyan-50 rounded-md w-60 p-2 text-sm"
+          className="bg-lime-50 rounded-md w-60 p-2 text-sm"
           type="email"
           placeholder="이메일 주소를 입력해주세요"
           {...register("email")}
         />
         <input
-          className="bg-cyan-50 rounded-md w-60 p-2 text-sm"
+          className="bg-lime-50 rounded-md w-60 p-2 text-sm"
           type="password"
           placeholder="비밀번호를 입력해주세요"
           {...register("password")}
         />
         <Button
-          className="bg-cyan-400 w-60 p-2 font-bold text-cyan-900"
+          className="bg-lime-500 w-60 p-2 font-bold text-gray-100"
           type="submit"
         >
           로그인

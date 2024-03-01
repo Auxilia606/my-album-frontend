@@ -21,7 +21,6 @@ export const Join = () => {
     [mutate]
   );
   const onInvalid: SubmitErrorHandler<UserForm> = useCallback((errors) => {
-    console.log("errors???", errors);
     setErrors(errors);
   }, []);
 

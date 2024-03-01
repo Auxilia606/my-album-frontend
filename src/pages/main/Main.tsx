@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 import { Navigate } from "react-router-dom";
 
 export const Main = observer(() => {
-  const { refetch } = useGetUserLogout();
+  const { mutateAsync } = useGetUserLogout();
   if (!UserStore.userInfo) {
     return <Navigate to="/login" />;
   } else {
@@ -12,8 +12,8 @@ export const Main = observer(() => {
       <div>
         Main page 안녕하세요! {UserStore.userInfo.nickname}
         <button
-          onClick={() => {
-            refetch();
+          onClick={async () => {
+            await mutateAsync();
             UserStore.logout();
           }}
         >

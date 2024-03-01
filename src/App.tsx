@@ -5,7 +5,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: (failureCount) => {
-        return failureCount < 5;
+        return failureCount < 1;
       },
     },
   },
