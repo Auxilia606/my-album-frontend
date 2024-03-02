@@ -1,6 +1,7 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { UserDTO, UserEmailDTO, UserNicknameDTO } from "@types";
 import {
+  getUserPhotos,
   postCheckEmail,
   postCheckNickname,
   postLogin,
@@ -37,5 +38,12 @@ export const usePostCheckEmailMutation = () => {
 export const usePostCheckNicknameMutation = () => {
   return useMutation({
     mutationFn: (dto: UserNicknameDTO) => postCheckNickname(dto),
+  });
+};
+
+export const useGetUserPhotos = () => {
+  return useQuery({
+    queryKey: ["auth", "photos"],
+    queryFn: () => getUserPhotos(),
   });
 };

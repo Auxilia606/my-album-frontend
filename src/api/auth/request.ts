@@ -1,4 +1,10 @@
-import { UserDTO, UserEmailDTO, UserNicknameDTO, UserResDTO } from "@types";
+import {
+  UserDTO,
+  UserEmailDTO,
+  UserNicknameDTO,
+  UserPhotoResDTO,
+  UserResDTO,
+} from "@types";
 import { defaultApi } from "../invoke";
 
 export const postLogin = async (dto: Pick<UserDTO, "email" | "password">) => {
@@ -22,6 +28,12 @@ export const postUser = async (dto: UserDTO) => {
 
 export const postCheckEmail = async (dto: UserEmailDTO) => {
   const { data } = await defaultApi.post<UserResDTO>("/auth/check/email", dto);
+
+  return data;
+};
+
+export const getUserPhotos = async () => {
+  const { data } = await defaultApi.get<UserPhotoResDTO>("/auth/photos");
 
   return data;
 };
