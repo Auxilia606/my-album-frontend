@@ -32,6 +32,11 @@ export class DialogStore {
     this.reset();
   }
 
+  openUpload() {
+    this.changeType("upload");
+    this.open();
+  }
+
   openImage(src: string) {
     this.changeType("image");
     this.imgsrc = src;

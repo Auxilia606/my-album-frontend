@@ -16,8 +16,8 @@ export const Header = observer(() => {
       </Title>
       <Button
         className="text-xs p-2"
-        onClick={async () => {
-          DialogStore.open();
+        onClick={() => {
+          DialogStore.openUpload();
         }}
       >
         <img className="w-6 h-6 fill-white" alt="upload" src={PhotoUpload} />
