@@ -20,9 +20,8 @@ const Photo: React.FC<PhotoDTO> = observer((props) => {
   );
 });
 
-export const PhotoList = () => {
+export const PhotoList = observer(() => {
   const { data } = useGetUserPhotos();
-
   if (!data) return null;
 
   const { photos } = data;
@@ -36,4 +35,4 @@ export const PhotoList = () => {
       <div className="flex-none w-[32%] aspect-square" />
     </div>
   );
-};
+});

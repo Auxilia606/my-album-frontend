@@ -1,3 +1,4 @@
+import { UserStore } from "@store";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { UserDTO, UserEmailDTO, UserNicknameDTO } from "@types";
 import {
@@ -45,5 +46,6 @@ export const useGetUserPhotos = () => {
   return useQuery({
     queryKey: ["auth", "photos"],
     queryFn: () => getUserPhotos(),
+    enabled: !!UserStore.token,
   });
 };

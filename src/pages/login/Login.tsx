@@ -16,10 +16,14 @@ export const Login = () => {
   const onLogin: SubmitHandler<Pick<UserForm, "email" | "password">> =
     useCallback(
       async (data) => {
-        const res = await mutateAsync(data);
-        UserStore.login({
-          ...res,
-        });
+        const { email, nickname, token } = await mutateAsync(data);
+        UserStore.login(
+          {
+            email,
+            nickname,
+          },
+          token
+        );
         navigate("/");
       },
       [mutateAsync, navigate]

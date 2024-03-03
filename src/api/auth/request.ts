@@ -1,3 +1,4 @@
+import { UserStore } from "@store";
 import {
   UserDTO,
   UserEmailDTO,
@@ -8,10 +9,9 @@ import {
 import { defaultApi } from "../invoke";
 
 export const postLogin = async (dto: Pick<UserDTO, "email" | "password">) => {
-  const { data } = await defaultApi.post<Pick<UserDTO, "email" | "nickname">>(
-    "/auth/login",
-    dto
-  );
+  const { data } = await defaultApi.post<
+    Pick<UserDTO, "email" | "nickname"> & { token: string }
+  >("/auth/login", dto);
 
   return data;
 };
@@ -33,7 +33,11 @@ export const postCheckEmail = async (dto: UserEmailDTO) => {
 };
 
 export const getUserPhotos = async () => {
-  const { data } = await defaultApi.get<UserPhotoResDTO>("/auth/photos");
+  const { data } = await defaultApi.get<UserPhotoResDTO>("/auth/photos", {
+    headers: {
+      Authorization: UserStore.token,
+    },
+  });
 
   return data;
 };
