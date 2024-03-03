@@ -1,9 +1,13 @@
 # My-Album-Frontend
 
 앨범 저장 및 공유 서비스 프론트엔드
+
 (백엔드 서비스 https://github.com/Auxilia606/my-album-backend)
 
 (공용타입 서브모듈 https://github.com/Auxilia606/my-album-types)
+
+테스트 URL: http://auxilia-my-album-frontend.s3-website.ap-northeast-2.amazonaws.com/
+
 
 <img src="https://github.com/Auxilia606/my-album-frontend/assets/56806864/4bdad2e3-0702-4cbf-a282-9677514ec1c3" width="30%" height="30%">
 <img src="https://github.com/Auxilia606/my-album-frontend/assets/56806864/80e84675-77ef-433f-a02c-1a1b22b5c5cf" width="30%" height="30%">
